@@ -73,6 +73,7 @@ const completedCardArray = [];
         cardArray[1].style.pointerEvents = "none";
         cardArray.splice(0);
         // 클릭한 카드의 수가 2개 이면 checked 값을 false 변경
+        
         setChecked();
         // 완료카드수가 총 카드 수와 같을 때 게임 종료
         if (completedCardArray.length === totalCard) {
