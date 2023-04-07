@@ -1,4 +1,4 @@
-import { shuffle,  randomCardArray1, randomCardArray2, cardArray, completedCardArray, cardSetting} from "./card.js";
+import { shuffle,  randomCardArray1, randomCardArray2, cardArray, completedCardArray, cardInitalized} from "./card.js";
 import { playSound,soundArray, soundArray2, soundArray3, bgm, soundSetting} from "./audio.js";
 import { startTime, setStartTime, totalTime, setTotalTime, setTotalPauseTime } from "./game.js";
 import { setRaking } from "./modal.js";
@@ -119,7 +119,7 @@ function startGame() {
   $container.style.pointerEvents = "none";
   $pauseBtn.style.pointerEvents = 'none';
   $resetBtn.style.pointerEvents = 'none';
-  cardSetting();
+  cardInitalized();
   bgm.play();
 
  

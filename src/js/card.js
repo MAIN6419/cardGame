@@ -11,7 +11,12 @@ const randomCardArray2 = [];
 const cardArray = [];
 const completedCardArray = [];
 
- function cardSetting() {
+ function cardInitalized() {
+    createCard();
+    setAnimal();
+  }
+
+  function createCard() {
     for (let i = 0; i < totalCard; i++) {
       const $card = document.createElement("div");
       const $cardInner = document.createElement("div");
@@ -27,13 +32,19 @@ const completedCardArray = [];
       $card.append($cardInner);
       $cardInner.append($cardFront);
       $cardInner.append($cardBack);
-  
+    }
+  }
+
+  function setAnimal() {
+    const $cardFront = document.querySelectorAll('.card-front');
+    const $card = document.querySelectorAll(".card");
+    for (let i = 0; i < totalCard; i++) {
       if (i < totalCard/2) {
-        $cardFront.innerHTML = animal[randomCardArray1[i]];
-        $card.setAttribute("name", randomCardArray1[i]);
+        $cardFront[i].innerHTML = animal[randomCardArray1[i]];
+        $card[i].setAttribute("name", randomCardArray1[i]);
       } else {
-        $cardFront.innerHTML = animal[randomCardArray2[i % (totalCard/2)]];
-        $card.setAttribute("name", randomCardArray2[i % (totalCard/2)]);
+        $cardFront[i].innerHTML = animal[randomCardArray2[i % (totalCard/2)]];
+        $card[i].setAttribute("name", randomCardArray2[i % (totalCard/2)]);
       }
     }
   }
@@ -105,4 +116,4 @@ const completedCardArray = [];
   }
   /*-------------------------------------// 카드 설정 관련 함수-------------------------------------*/
 
-  export {randomCardArray1, randomCardArray2, cardArray, completedCardArray, cardSetting, shuffle}
+  export {randomCardArray1, randomCardArray2, cardArray, completedCardArray, cardInitalized, shuffle}
